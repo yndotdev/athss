@@ -22,7 +22,6 @@
         <a href="about.html">About</a>
         <a href="programs.html">Programs</a>
         <a href="team.html">Our Team</a>
-        <a href="portal.html">BIP Portal</a>
         <a href="contact.html">Contact</a>
         <a class="donate-btn" href="donate.html">Donate</a>
       </div>
@@ -43,7 +42,6 @@
         </p>
         <div class="hero-cta">
           <a class="btn-primary" href="programs.html">Our Programs</a>
-          <a class="btn-green" href="portal.html">BIP Participant Portal</a>
           <a class="btn-outline" href="donate.html">Support Our Work</a>
         </div>
         <div class="hero-photos" aria-hidden="true">
@@ -102,15 +100,6 @@
               <p>
                 Court-certified BIP in partnership with Alameda County
                 Probation.
-                <a
-                  href="portal.html"
-                  style="
-                    color: var(--org-mid);
-                    cursor: pointer;
-                    font-weight: 700;
-                  "
-                  >→ Participant Portal</a
-                >
               </p>
             </div>
             <div
@@ -173,18 +162,25 @@
       <div class="footer-links">
         <a href="about.html">About</a>
         <a href="programs.html">Programs</a>
-        <a href="portal.html">BIP Portal</a>
         <a href="donate.html">Donate</a>
         <a href="contact.html">Contact</a>
       </div>
       <div style="margin-top: 0.75rem; font-size: 11px; opacity: 0.5">
-        &copy; 2025 ATHSS. All rights reserved.
+        &copy; 2026 ATHSS. All rights reserved.
       </div>
     </footer>
     <script>
       function showPage(id) {
-        const map = { home: 'index.html', about: 'about.html', programs: 'programs.html', team: 'team.html', portal: 'portal.html', donate: 'donate.html', contact: 'contact.html' };
-        window.location.href = map[id] || (id + '.html');
+        const map = {
+          home: "index.html",
+          about: "about.html",
+          programs: "programs.html",
+          team: "team.html",
+          portal: "portal.html",
+          donate: "donate.html",
+          contact: "contact.html",
+        };
+        window.location.href = map[id] || id + ".html";
       }
       function selectAmount(btn, amt) {
         document
@@ -201,9 +197,10 @@
         c.classList.toggle("open");
       }
       // highlight current nav link
-      const _cur = (window.location.pathname.split('/').pop() || 'index.html');
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        if (a.getAttribute('href') === _cur) a.setAttribute('aria-current', 'page');
+      const _cur = window.location.pathname.split("/").pop() || "index.html";
+      document.querySelectorAll(".nav-links a").forEach((a) => {
+        if (a.getAttribute("href") === _cur)
+          a.setAttribute("aria-current", "page");
       });
     </script>
   </body>
