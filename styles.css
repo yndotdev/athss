@@ -189,7 +189,7 @@
       .hero-photos {
         display: flex;
         gap: 5px;
-        height: 100px;
+        height: 240px;
         overflow: hidden;
       }
       .hero-photos img {
@@ -969,7 +969,7 @@
           grid-template-columns: 1fr 1fr;
         }
         .hero-photos {
-          height: 70px;
+          height: 160px;
         }
         .donate-hero {
           padding: 2.5rem 1.25rem;
