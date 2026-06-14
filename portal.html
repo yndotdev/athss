@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BIP Portal | ATHSS</title>
+    <meta
+      name="description"
+      content="Allen Temple Health and Social Services (ATHSS) is a registered 501(c)(3) nonprofit organization in Oakland, CA — strengthening families and communities through compassionate, faith-centered supportive services."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <span class="nav-brand">Allen Temple Health and Social Services</span>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="team.html">Our Team</a>
+        <a href="portal.html">BIP Portal</a>
+        <a href="contact.html">Contact</a>
+        <a class="donate-btn" href="donate.html">Donate</a>
+      </div>
+    </nav>
+
+    <div id="portal" role="main">
+      <div class="section-wrapper">
+        <div class="section">
+          <h2 class="section-title">BIP Participant Portal</h2>
+          <div class="org-rule"></div>
+          <p class="section-sub">
+            Secure document submission and payment for Batterers' Intervention
+            Program participants and referring agencies.
+          </p>
+          <div class="portal-card">
+            <h3>
+              <i
+                class="ti ti-upload"
+                style="color: var(--grn-mid); margin-right: 8px"
+                aria-hidden="true"
+              ></i
+              >Submit documents
+            </h3>
+            <p>
+              Participants and referring agencies can securely upload required
+              program documents — intake forms, court orders, verification
+              letters, and progress reports.
+            </p>
+            <div class="portal-actions">
+              <a href="#" class="portal-btn p-grn"
+                ><i class="ti ti-upload" aria-hidden="true"></i> Upload
+                documents</a
+              >
+              <a href="#" class="portal-btn p-out"
+                ><i class="ti ti-download" aria-hidden="true"></i> Download
+                intake forms</a
+              >
+            </div>
+            <div class="portal-note">
+              Accepted formats: PDF, JPG, PNG &nbsp;·&nbsp; Max 10MB per file
+            </div>
+          </div>
+          <div class="portal-card">
+            <h3>
+              <i
+                class="ti ti-credit-card"
+                style="color: var(--org-mid); margin-right: 8px"
+                aria-hidden="true"
+              ></i
+              >Submit payment
+            </h3>
+            <p>
+              Program fees can be paid securely online. Please include your full
+              name and enrollment date in the payment notes.
+            </p>
+            <div class="portal-actions">
+              <a href="#" class="portal-btn p-org"
+                ><i class="ti ti-credit-card" aria-hidden="true"></i> Pay
+                program fees</a
+              >
+              <a href="#" class="portal-btn p-out"
+                ><i class="ti ti-help-circle" aria-hidden="true"></i> Fee
+                schedule &amp; questions</a
+              >
+            </div>
+            <div class="portal-note">
+              Payments processed securely. Contact us if you need fee
+              assistance.
+            </div>
+          </div>
+          <div
+            class="portal-card"
+            style="border-color: var(--sand); background: var(--tan)"
+          >
+            <h3>
+              <i
+                class="ti ti-clipboard-list"
+                style="color: var(--brn); margin-right: 8px"
+                aria-hidden="true"
+              ></i
+              >For referring agencies &amp; probation officers
+            </h3>
+            <p>
+              To refer a participant, download the referral packet, complete all
+              required sections, and upload via the document portal above. For
+              enrollment questions or attendance verification, contact us
+              directly.
+            </p>
+            <div class="portal-actions">
+              <a href="#" class="portal-btn p-out"
+                ><i class="ti ti-file-download" aria-hidden="true"></i> Download
+                referral packet</a
+              >
+              <a
+                href="contact.html"
+                class="portal-btn p-out"
+                style="cursor: pointer"
+                ><i class="ti ti-mail" aria-hidden="true"></i> Contact us</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+      <strong>Allen Temple Health and Social Services (ATHSS)</strong>
+      ATHSS is a registered 501(c)(3) nonprofit organization &nbsp;·&nbsp;
+      Oakland, CA<br />
+      A faith-centered supportive service — strengthening families and
+      communities through compassionate care.
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="portal.html">BIP Portal</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div style="margin-top: 0.75rem; font-size: 11px; opacity: 0.5">
+        &copy; 2025 ATHSS. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      function showPage(id) {
+        const map = { home: 'index.html', about: 'about.html', programs: 'programs.html', team: 'team.html', portal: 'portal.html', donate: 'donate.html', contact: 'contact.html' };
+        window.location.href = map[id] || (id + '.html');
+      });
+        }
+      }
+      function selectAmount(btn, amt) {
+        document
+          .querySelectorAll(".amount-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("donate-btn").textContent =
+          amt === "custom"
+            ? "Donate a custom amount"
+            : "Donate " + amt + " now";
+      }
+      function toggleBio(id) {
+        const c = document.getElementById(id);
+        c.classList.toggle("open");
+      }
+      // highlight current nav link
+      const _cur = (window.location.pathname.split('/').pop() || 'index.html');
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        if (a.getAttribute('href') === _cur) a.setAttribute('aria-current', 'page');
+      });
+      
+      });
+    </script>
+  </body>
+</html>

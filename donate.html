@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate | ATHSS</title>
+    <meta
+      name="description"
+      content="Allen Temple Health and Social Services (ATHSS) is a registered 501(c)(3) nonprofit organization in Oakland, CA — strengthening families and communities through compassionate, faith-centered supportive services."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <span class="nav-brand">Allen Temple Health and Social Services</span>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="team.html">Our Team</a>
+        <a href="portal.html">BIP Portal</a>
+        <a href="contact.html">Contact</a>
+        <a class="donate-btn" href="donate.html">Donate</a>
+      </div>
+    </nav>
+
+    <div id="donate" role="main">
+      <div class="donate-hero">
+        <h2>Support our mission</h2>
+        <p>
+          Your generosity helps us provide life-changing programs to individuals
+          and families across our community. Every gift makes a difference.
+        </p>
+        <div class="donate-amounts">
+          <button class="amount-btn" onclick="selectAmount(this, '$25')">
+            $25
+          </button>
+          <button class="amount-btn active" onclick="selectAmount(this, '$50')">
+            $50
+          </button>
+          <button class="amount-btn" onclick="selectAmount(this, '$100')">
+            $100
+          </button>
+          <button class="amount-btn" onclick="selectAmount(this, '$250')">
+            $250
+          </button>
+          <button class="amount-btn" onclick="selectAmount(this, 'custom')">
+            Custom
+          </button>
+        </div>
+        <button
+          class="btn-primary"
+          id="donate-btn"
+          style="font-size: 15px; padding: 12px 32px; position: relative"
+        >
+          Donate $50 now
+        </button>
+      </div>
+      <div class="section-wrapper">
+        <div class="section" style="max-width: 520px">
+          <h3
+            style="
+              font-size: 18px;
+              font-weight: 800;
+              color: var(--brn);
+              margin-bottom: 0.5rem;
+            "
+          >
+            Give in person
+          </h3>
+          <div class="org-rule"></div>
+          <div class="contact-info-item">
+            <div class="contact-icon">
+              <i class="ti ti-building" aria-hidden="true"></i>
+            </div>
+            <div>
+              <div class="contact-label">In person</div>
+              <div class="contact-value">
+                Give at our office or during community events
+              </div>
+            </div>
+          </div>
+          <p
+            style="
+              font-size: 13.5px;
+              color: var(--text-muted);
+              margin-top: 0.5rem;
+              font-style: italic;
+            "
+          >
+            To make a gift by check or explore other giving options, please
+            <a
+              href="contact.html"
+              style="color: var(--org-mid); cursor: pointer; font-weight: 600"
+              >contact us directly</a
+            >.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+      <strong>Allen Temple Health and Social Services (ATHSS)</strong>
+      ATHSS is a registered 501(c)(3) nonprofit organization &nbsp;·&nbsp;
+      Oakland, CA<br />
+      A faith-centered supportive service — strengthening families and
+      communities through compassionate care.
+      <div class="footer-links">
+        <a href="about.html">About</a>
+        <a href="programs.html">Programs</a>
+        <a href="portal.html">BIP Portal</a>
+        <a href="donate.html">Donate</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div style="margin-top: 0.75rem; font-size: 11px; opacity: 0.5">
+        &copy; 2025 ATHSS. All rights reserved.
+      </div>
+    </footer>
+    <script>
+      function showPage(id) {
+        const map = { home: 'index.html', about: 'about.html', programs: 'programs.html', team: 'team.html', portal: 'portal.html', donate: 'donate.html', contact: 'contact.html' };
+        window.location.href = map[id] || (id + '.html');
+      });
+        }
+      }
+      function selectAmount(btn, amt) {
+        document
+          .querySelectorAll(".amount-btn")
+          .forEach((b) => b.classList.remove("active"));
+        btn.classList.add("active");
+        document.getElementById("donate-btn").textContent =
+          amt === "custom"
+            ? "Donate a custom amount"
+            : "Donate " + amt + " now";
+      }
+      function toggleBio(id) {
+        const c = document.getElementById(id);
+        c.classList.toggle("open");
+      }
+      // highlight current nav link
+      const _cur = (window.location.pathname.split('/').pop() || 'index.html');
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        if (a.getAttribute('href') === _cur) a.setAttribute('aria-current', 'page');
+      });
+      
+      });
+    </script>
+  </body>
+</html>
