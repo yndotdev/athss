@@ -147,8 +147,16 @@
     </footer>
     <script>
       function showPage(id) {
-        const map = { home: 'index.html', about: 'about.html', programs: 'programs.html', team: 'team.html', portal: 'portal.html', donate: 'donate.html', contact: 'contact.html' };
-        window.location.href = map[id] || (id + '.html');
+        const map = {
+          home: "index.html",
+          about: "about.html",
+          programs: "programs.html",
+          team: "team.html",
+          portal: "portal.html",
+          donate: "donate.html",
+          contact: "contact.html",
+        };
+        window.location.href = map[id] || id + ".html";
       }
       function selectAmount(btn, amt) {
         document
@@ -165,11 +173,10 @@
         c.classList.toggle("open");
       }
       // highlight current nav link
-      const _cur = (window.location.pathname.split('/').pop() || 'index.html');
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        if (a.getAttribute('href') === _cur) a.setAttribute('aria-current', 'page');
-      });
-      
+      const _cur = window.location.pathname.split("/").pop() || "index.html";
+      document.querySelectorAll(".nav-links a").forEach((a) => {
+        if (a.getAttribute("href") === _cur)
+          a.setAttribute("aria-current", "page");
       });
     </script>
   </body>
