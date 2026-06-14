@@ -116,44 +116,13 @@
             Upcoming events
           </h3>
           <div class="org-rule"></div>
-          <div class="events-list">
-            <div class="event-card">
-              <div class="event-date">
-                <div class="event-month">Jun</div>
-                <div class="event-day">7</div>
-              </div>
-              <div class="event-info">
-                <h4>Anger Management intake — new session</h4>
-                <p>New participants welcome. Oakland, CA.</p>
-                <span class="event-tag">Anger Management</span>
-              </div>
+          <div class="coming-soon-card">
+            <div class="bio-avatar pending" style="border-radius: 12px">
+              <i class="ti ti-calendar-event"></i>
             </div>
-            <div class="event-card">
-              <div class="event-date">
-                <div class="event-month">Jun</div>
-                <div class="event-day">14</div>
-              </div>
-              <div class="event-info">
-                <h4>Community healing circle</h4>
-                <p>
-                  Open to all. A safe space for sharing, reflection, and
-                  support.
-                </p>
-                <span class="event-tag">Community</span>
-              </div>
-            </div>
-            <div class="event-card">
-              <div class="event-date">
-                <div class="event-month">Jun</div>
-                <div class="event-day">21</div>
-              </div>
-              <div class="event-info">
-                <h4>Malachi Project — father &amp; family gathering</h4>
-                <p>
-                  Annual celebration of restored family bonds. All are welcome.
-                </p>
-                <span class="event-tag">Malachi Project</span>
-              </div>
+            <div>
+              <div class="bio-name">Events coming soon</div>
+              <div class="note">Check back for upcoming workshops, community gatherings, and program sessions.</div>
             </div>
           </div>
         </div>
@@ -174,13 +143,21 @@
         <a href="contact.html">Contact</a>
       </div>
       <div style="margin-top: 0.75rem; font-size: 11px; opacity: 0.5">
-        &copy; 2025 ATHSS. All rights reserved.
+        &copy; 2026 ATHSS. All rights reserved.
       </div>
     </footer>
     <script>
       function showPage(id) {
-        const map = { home: 'index.html', about: 'about.html', programs: 'programs.html', team: 'team.html', portal: 'portal.html', donate: 'donate.html', contact: 'contact.html' };
-        window.location.href = map[id] || (id + '.html');
+        const map = {
+          home: "index.html",
+          about: "about.html",
+          programs: "programs.html",
+          team: "team.html",
+          portal: "portal.html",
+          donate: "donate.html",
+          contact: "contact.html",
+        };
+        window.location.href = map[id] || id + ".html";
       }
       function selectAmount(btn, amt) {
         document
@@ -197,9 +174,10 @@
         c.classList.toggle("open");
       }
       // highlight current nav link
-      const _cur = (window.location.pathname.split('/').pop() || 'index.html');
-      document.querySelectorAll('.nav-links a').forEach(a => {
-        if (a.getAttribute('href') === _cur) a.setAttribute('aria-current', 'page');
+      const _cur = window.location.pathname.split("/").pop() || "index.html";
+      document.querySelectorAll(".nav-links a").forEach((a) => {
+        if (a.getAttribute("href") === _cur)
+          a.setAttribute("aria-current", "page");
       });
     </script>
   </body>
