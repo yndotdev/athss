@@ -189,13 +189,17 @@
       .hero-photos {
         display: flex;
         gap: 5px;
-        height: 100px;
-        overflow: hidden;
+        height: 200px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
       }
       .hero-photos img {
-        flex: 1;
+        flex: 0 0 calc(25% - 4px);
+        min-width: 200px;
         object-fit: cover;
         object-position: center 25%;
+        scroll-snap-align: start;
       }
 
       /* ── BUTTONS ── */
@@ -973,7 +977,7 @@
           scroll-snap-type: x mandatory;
         }
         .hero-photos {
-          height: 70px;
+          height: 150px;
         }
         .donate-hero {
           padding: 2.5rem 1.25rem;
